@@ -1,0 +1,45 @@
+Scenario: Given array of I integers (arr[I]), sort all integers according to a specific order
+
+Selection Sort: divides a list from sorted, and unsorted, where current minimum checks against current item and swaps 
+                from unsorted to sorted if conditions are met 
+
+
+>Time Complexity: O(n^2), due to two nested loops [O(n) * O(n)]
+>Space Complexity: O(1), only the extra memory used is for temporary variables
+
+ADV: 
+>requires less number of swaps compared to other algorithms, requires only a costant O(1) extra memory space, and easy to understand
+
+DISADV:
+>slow due to it's time complexity, unlike quick sort or merge sort, and does not maintain order of equal elements hence not stable
+
+ex:
+SELECT PARTITION: 
+Array: (5,2),3,7
+I=1
+J=2
+
+SELECT PARTITION:  2
+Array: 2,(5,3),7
+I=1
+J=3
+
+SELECT PARTITION:  2,3
+Array: 2,3,(5,7)
+I=1
+J=4
+
+SELECT PARTITION:  2,3,5,7
+Array: 2,3,5,7
+I=2
+J=3
+
+LOOP FOR I < arr.length() - 1
+    LOOP FOR J < arr.length()     ---//WHERE J = I+1
+        IF arr(j) < arr(i) THEN 
+            temp = arr[i]
+            arr[i] = arr [j]
+            arr[j] = temp
+        END IF 
+    END LOOP
+END LOOP

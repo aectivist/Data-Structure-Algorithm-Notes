@@ -1,0 +1,38 @@
+Scenario: Given array of n integers (arr[n]), and integer element of x, find element x
+
+Linear Search: iterates linear until found 
+>Time Space Complexity: Best-O(1), Worst-O(N), Average-o(N)
+
+ADV: 
+>LS can be used on arrays of any DATA TYPE and good if small DATA SETS
+
+DISADV:
+>Slow if huge DATA SETS + LARGE ARRAYS
+
+ex:
+0, 1, 2, 3 
+X=3 Not Found
+
+0 NF, 1, 2, 3
+X=3 Not Found
+
+0, 1NF, 2, 3
+X=3 Not Found
+
+0, 1, 2NF, 3
+X=3 Not Found
+
+0, 1, 2, 3F
+X=3 Found
+
+PSEUDOCODE:
+
+
+FUNCTION Linear_Saerch (list, value)
+    LOOP WHILE I < Arr.length()
+        IF Arr[I] == x
+            return I 
+        END IF
+    END FOR
+END FUNCTION
+

@@ -1,0 +1,40 @@
+Scenario: Given array of I integers (arr[I]), sort all integers according to a specific order
+
+Bubble Sort: brute checks each number from itself to check where if one element is greater than the other, then they will switch
+>Time Complexity: O(n^2)
+>Space Complexity: O(1)
+ADV: 
+>Stable sorting algo matains relative order in sorted output + does NOT need additional memory space
+
+DISADV:
+>no/limited real world application
+
+ex:
+I = 0**
+0, 5, 2 
+J: 5
+I > J? FALSE
+
+0, 5, 2 
+J: 2
+I > J? FALSE
+
+I = 1**
+0, 5, 2 
+J: 2
+I > J? TRUE
+
+RESULT: 0, 2, 5
+
+
+PSEUDOCODE:
+
+LOOP WHILE I < arr.length() - 1             ---#NOTE: minus one because it DOES NOT include last input, where last input is the total result
+    LOOP WHILE J < arr.length() - I - 1
+        IF arr[J] > arr[J+1] THEN 
+            temp = arr[J]                             ---//ex: 5, 3 TEMP = 5
+            arr[J] = arr[J+1]                         ---//ex: 3, 3 TEMP = 5
+            arr[J+1] = temp                           ---//ex: 3, 5 TEMP = 5
+        END IF
+    END LOOP
+END LOOP

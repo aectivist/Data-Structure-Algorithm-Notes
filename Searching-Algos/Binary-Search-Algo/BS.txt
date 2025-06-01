@@ -1,0 +1,55 @@
+Scenario: Given array of n integers (arr[n]), and integer element of x, find element x
+
+Binary Search:  
+1. Divide saerch into two halves, split by MID
+2. Compare MID 
+    a. if X > than MID, LOW = MID, and new MID is made where ((LOW + HIGH)/2)
+    b. if X < than MID, HIGH = MID, and new MID is made where ((LOW + HIGH) /2)
+3. If still not found, then X is NOT found
+
+>Time Complexity: Best O(1), Worst O(log N), Average O(log N)
+> Space Complexity: O(1)
+
+
+ex:
+1, 2, 3 ,4,5,6,7,8,9,10
+X=3 Not Found
+LOW: 0
+HIGH: 10
+MID: 5
+Result: X<MID, hence new HIGH = MID, and new MID = ((5-1)+0)/2 = 2
+
+0, 1, 2, 3 ,4,5,6,7,8,9,10
+X=3 Not Found
+LOW: 0
+HIGH: 5
+MID: 2
+Result: X>MID, hence new LOW = MID, and new MID = (2+(5+1))/2 = 3
+
+0, 1, 2, 3 ,4,5,6,7,8,9,10
+X=3 Found
+LOW: 0
+HIGH: 5
+MID: 2
+Result: X = MID, result is found.
+
+
+PSEUDOCODE:
+HIGH = arr.length() - 1
+LOW = 0
+FUNCTION binarySearch(arr, LOW, HIGH, X)
+
+    MID = (HIGH + LOW)/2
+    LOOP WHILE x != MID
+        IF arr[MID] == X then
+            return MID
+        ELSE IF arr[MID] > x
+            HIGH = MID - 1
+        ELSE IF arr[MID] < X
+            LOW = MID + 1
+        ELSE
+            return "not found"
+        END IF 
+    END LOOP
+
+        
